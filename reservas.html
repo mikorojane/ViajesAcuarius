@@ -1,0 +1,123 @@
+<html>
+<head>
+    <title>Reservas - Viajes Acuarius</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #F8F8FF;
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4169E1;
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+        .destino-container {
+            display: inline-block;
+            margin: 20px;
+            vertical-align: top;
+        }
+        .destino-container img {
+            width: 300px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .boton {
+            display: block;
+            margin: 10px auto;
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #365fbb;
+        }
+        #lista-reservas {
+            margin-top: 40px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #e1e8ff;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        #lista-reservas h2 {
+            text-align: center;
+            color: #4169E1;
+        }
+        #lista-reservas ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Elige tu destino para reservar</h1>
+
+    <!-- Destinos -->
+    <div class="destino-container">
+        <img src="tecolutla.jpg" alt="Tecolutla">
+        <button class="boton" onclick="reservar('Tecolutla')">RESERVAR🛬</button>
+    </div>
+
+    <div class="destino-container">
+        <img src="tepoztlan.jpg" alt="Tepoztlán">
+        <button class="boton" onclick="reservar('Tepoztlán')">RESERVAR🛬</button>
+    </div>
+
+    <div class="destino-container">
+        <img src="veracruz.jpg" alt="Veracruz">
+        <button class="boton" onclick="reservar('Veracruz')">RESERVAR🛬</button>
+    </div>
+
+    <div class="destino-container">
+        <img src="mazatlan.jpg" alt="Mazatlán">
+        <button class="boton" onclick="reservar('Mazatlán')">RESERVAR🛬</button>
+    </div>
+
+    <!-- Lista de reservas -->
+    <div id="lista-reservas">
+        <h2>Reservas realizadas</h2>
+        <ul id="reservas"></ul>
+    </div>
+
+    <script>
+        // Array para guardar reservas
+        let reservasArray = [];
+
+        function reservar(destino) {
+            const confirmacion = confirm("¿Deseas reservar un viaje a " + destino + "?");
+            if(confirmacion) {
+                alert("¡Reserva exitosa para " + destino + "!");
+                reservasArray.push(destino);
+                actualizarLista();
+            } else {
+                alert("Reserva cancelada.");
+            }
+        }
+
+        function actualizarLista() {
+            const lista = document.getElementById('reservas');
+            lista.innerHTML = ''; // limpiar lista
+            reservasArray.forEach(function(destino) {
+                const li = document.createElement('li');
+                li.textContent = destino;
+                lista.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+</html>

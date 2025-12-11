@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Menú Principal</title>
+    <style>
+        body { 
+            background-color: #f8f8ff; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            padding: 0;
+        }
+        .titulo {
+            font-size: 35px; 
+            color: #4169E1; 
+            font-weight: bold; 
+            margin-top: 20px;
+        }
+        .boton {
+            background-color: rgb(131, 201, 255);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 15px 0;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 80%;
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #85c9ff;
+        }
+        img {
+            margin: 10px 0;
+            width: 100px;
+            height: 100px;
+        }
+        hr {
+            border: none;
+            height: 15px;
+            background-color: #DCDCDC;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <hr>
+    <div class="titulo">MENÚ </div>
+    <hr>
+
+    <!-- Inicio -->
+    <button class="boton" onclick="parent.contenido.location='inicio.html'">Iniciar Sesión</button>
+    <img src="logoacuarius.jpeg" alt="Inicio">
+
+    <!-- Viajes disponibles -->
+    <button class="boton" onclick="parent.contenido.location='Sevicios.html'">Viajes Disponibles</button>
+    <img src="viajess.jpg" alt="Viajes disponibles">
+
+    <!-- Reservar -->
+    <button class="boton" onclick="parent.contenido.location='reservas.html'">Reservar</button>
+    <img src="reserva.jpg" alt="Reservar">
+
+    <!-- Promociones -->
+    <button class="boton" onclick="parent.contenido.location='promociones.html'">Promociones</button>
+    <img src="promocion.webp" alt="Promociones">
+
+</body>
+</html>

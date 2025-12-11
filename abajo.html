@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Bienvenido - Viajes Acuarius</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #F8F8FF;
+            font-family: 'Poppins', Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4169E1;
+            font-size: 50px;
+            margin-top: 30px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 20px;
+            margin: 10px 0 30px 0;
+            font-weight: 600;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 350px;
+            position: relative;
+        }
+        .slide-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            opacity: 0.9;
+            transition: background-color 0.3s;
+        }
+        .slide-button:hover {
+            background-color: #365fbb;
+        }
+        @keyframes fadeEffect {
+            0% {opacity: 0;}
+            10% {opacity: 1;}
+            30% {opacity: 1;}
+            40% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+        .fade {
+            animation: fadeEffect 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>BIENVENIDO A VIAJES ACUARIUS</h1>
+    <p>Explora nuestros destinos, reserva tu viaje y descubre promociones exclusivas.</p>
+
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="cascada.webp" alt="Destino 1" style="width:100%; height:100%;">
+            <button class="slide-button" onclick="parent.contenido.location='reservas.html'">Reservar</button>
+        </div>
+        <div class="slides fade">
+            <img src="PuertoVallarta.jpg" alt="Destino 2" style="width:100%; height:100%;">
+            <button class="slide-button" onclick="parent.contenido.location='reservas.html'">Reservar</button>
+        </div>
+        <div class="slides fade">
+            <img src="acapulco.jpg" alt="Destino 3" style="width:100%; height:100%;">
+            <button class="slide-button" onclick="parent.contenido.location='reservas.html'">Reservar</button>
+        </div>
+        <div class="slides fade">
+            <img src="SLP.jpg" alt="Destino 4" style="width:100%; height:100%;">
+            <button class="slide-button" onclick="parent.contenido.location='reservas.html'">Reservar</button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slides");
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // cambia imagen cada 3 segundos
+        }
+        showSlides();
+    </script>
+
+</body>
+</html>
